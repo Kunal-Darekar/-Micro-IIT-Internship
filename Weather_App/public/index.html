@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#4361ee">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="app-title">
+                <h1>Weather Forecast</h1>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Enter city name" id="search-input">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+                <button id="location-btn"><i class="fas fa-map-marker-alt"></i></button>
+            </div>
+            <div class="unit-toggle">
+                <button id="celsius" class="active">°C</button>
+                <button id="fahrenheit">°F</button>
+            </div>
+        </header>
+
+        <div class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="error-container">
+            <p id="error-message"></p>
+        </div>
+
+        <main>
+            <section class="current-weather">
+                <div class="weather-info">
+                    <h2 id="city-name">--</h2>
+                    <p id="local-time">--</p>
+                    <p id="local-date">--</p>
+                    <div class="weather-details">
+                        <img id="weather-icon" src="" alt="Weather Icon">
+                        <div class="temp-condition">
+                            <h1 id="temperature">--°</h1>
+                            <p id="weather-condition">--</p>
+                        </div>
+                    </div>
+                    <div class="additional-info">
+                        <div class="info-item">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity: <span id="humidity">--%</span></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind: <span id="wind-speed">-- km/h</span></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-temperature-low"></i>
+                            <span>Feels like: <span id="feels-like">--°</span></span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                            <span>Pressure: <span id="pressure">-- hPa</span></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="forecast">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast cards will be added here dynamically -->
+                </div>
+            </section>
+
+            <section class="search-history">
+                <h3>Search History</h3>
+                <div class="history-container" id="history-container">
+                    <!-- History items will be added here dynamically -->
+                </div>
+                <button id="clear-history">Clear History</button>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Weather Forecast App &copy; 2023 | Data from OpenWeatherMap</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
