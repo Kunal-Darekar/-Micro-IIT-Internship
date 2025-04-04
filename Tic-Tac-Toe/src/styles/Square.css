@@ -1,0 +1,125 @@
+.square {
+  width: 90px;
+  height: 90px;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 90px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.square:focus {
+  outline: none;
+  background: var(--highlight-color);
+  box-shadow: 0 0 0 3px var(--primary-color);
+  z-index: 1;
+}
+
+.square:hover {
+  background: var(--highlight-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+  z-index: 1;
+}
+
+.square::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--highlight-color) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.square:hover::before {
+  opacity: 0.6;
+}
+
+.square-x {
+  color: var(--x-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.square-o {
+  color: var(--o-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pop-in 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.center-square {
+  background-color: var(--highlight-color);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 12px var(--shadow-color);
+}
+
+.winning-square {
+  background-color: rgba(46, 213, 115, 0.2);
+  border: 3px solid var(--win-color);
+  box-shadow: 0 0 20px rgba(46, 213, 115, 0.6);
+  animation: pulse-win 1.5s infinite alternate, glow 2s infinite;
+  z-index: 2;
+}
+
+@keyframes pulse-win {
+  0% {
+    box-shadow: 0 0 15px rgba(46, 213, 115, 0.5);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(46, 213, 115, 0.8);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    border-color: var(--win-color);
+  }
+  50% {
+    border-color: var(--success-color);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .square {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 350px) {
+  .square {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 24px;
+  }
+}

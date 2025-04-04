@@ -1,0 +1,52 @@
+.game {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.game-board {
+  margin-right: 20px;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.status {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+button {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+ol {
+  padding-left: 30px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+li button {
+  margin-bottom: 5px;
+  background: #2196F3;
+}
+
+li button:hover {
+  background: #0b7dda;
+}

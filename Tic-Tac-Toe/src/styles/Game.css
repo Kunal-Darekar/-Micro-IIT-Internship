@@ -1,0 +1,218 @@
+.game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 900px;
+  width: 90%;
+  font-family: var(--font-family, 'Inter', sans-serif);
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px var(--shadow-color);
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease-out;
+}
+
+.game-board {
+  margin-right: 30px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.game-info {
+  margin-left: 20px;
+  min-width: 200px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.status {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 12px;
+  background-color: #e9ecef;
+  border-radius: 8px;
+  text-align: center;
+  color: #495057;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.reset-button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  background-color: #e74c3c;
+  background-image: linear-gradient(to right, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(231, 76, 60, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.reset-button:hover {
+  background-image: linear-gradient(to right, #c0392b, #e74c3c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+}
+
+.sort-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #3498db;
+  background-image: linear-gradient(to right, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.sort-button:hover {
+  background-image: linear-gradient(to right, #2980b9, #3498db);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
+}
+
+ol {
+  padding-left: 25px;
+  margin-top: 15px;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #adb5bd #f8f9fa;
+}
+
+ol::-webkit-scrollbar {
+  width: 8px;
+}
+
+ol::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+ol::-webkit-scrollbar-thumb {
+  background-color: #adb5bd;
+  border-radius: 10px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.history-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  color: #495057;
+  font-size: 14px;
+}
+
+.history-button:hover {
+  background-color: #e9ecef;
+  transform: translateX(3px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game {
+    flex-direction: column;
+    padding: 20px;
+    width: 95%;
+  }
+  
+  .game-board {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .game-info {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .game {
+    padding: 15px;
+  }
+  
+  .status {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .reset-button, .sort-button {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+.history-button.active {
+  background-color: #4dabf7;
+  color: white;
+  border-color: #4dabf7;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sort-button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.sort-button:hover {
+  background-color: #5f3dc4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 650px) {
+  .game {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .game-info {
+    margin-top: 20px;
+    margin-left: 0;
+    width: 100%;
+    max-width: 300px;
+  }
+}
