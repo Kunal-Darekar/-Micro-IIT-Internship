@@ -44,4 +44,3 @@ This project was built using Vite with React and TypeScript.
 ```
 =======
 # -Micro-IIT-Internship
->>>>>>> 5677e38eb556314d87201eeebba075ceae17fce1
