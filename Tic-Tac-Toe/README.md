@@ -41,6 +41,4 @@ This project was built using Vite with React and TypeScript.
     ...reactDom.configs.recommended.rules,
   },
 })
-```
-=======
-# -Micro-IIT-Internship
+
